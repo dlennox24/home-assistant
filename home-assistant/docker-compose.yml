@@ -1,0 +1,54 @@
+version: '3.0'
+
+services:
+  portainer:
+    container_name: portainer
+    image: portainer/portainer-ce
+    restart: always
+    ports:
+      - "9000:9000/tcp"
+    environment:
+      - TZ=America/Denver
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /opt/portainer:/data
+  
+  homeassistant:
+    container_name: home-assistant
+    image: "ghcr.io/home-assistant/home-assistant:stable"
+    volumes:
+      - /opt/home-assistant/config:/config
+      - /etc/localtime:/etc/localtime:ro
+      - /run/dbus:/run/dbus:ro
+    restart: unless-stopped
+    privileged: true
+    network_mode: host
+  
+  esphome:
+    container_name: esphome
+    image: esphome/esphome
+    restart: unless-stopped
+    ports:
+      - "6052:6052/tcp"
+    environment:
+      - TZ=America/Denver
+    # mDNS doesn't work across VLANs, use static IP for devices when disabling mDNS
+    #   - ESPHOME_DASHBOARD_USE_PING=true
+    volumes:
+      - /opt/esphome/config:/config
+      - /etc/localtime:/etc/localtime:ro
+    # devices:
+    #   - /dev/ttyUSB0:/dev/ttyUSB0
+  
+  duplicati:
+    container_name: duplicati
+    image: duplicati/duplicati
+    restart: unless-stopped
+    ports:
+      - "8200:8200/tcp"
+    environment:
+      - TZ=Europe/Brussels
+    volumes:
+      - /opt/duplicati/data:/data
+      - /mnt/backup/duplicati:/backups
+      - /opt:/source
