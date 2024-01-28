@@ -1,0 +1,2 @@
+30 23 * * 6 /opt/backup.sh > /dev/null
+45 23 * * 6 docker start homeassistant > /dev/null
