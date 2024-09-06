@@ -13,8 +13,8 @@
 
    ```shell
    cd /opt
-   sudo wget https://github.com/dlennox24/home-lab/archive/refs/heads/main.zip
-   sudo wget https://raw.githubusercontent.com/dlennox24/home-lab/main/home-assistant/restore.sh
+   sudo wget --no-cache --no-cookies https://github.com/dlennox24/home-lab/archive/refs/heads/main.zip
+   sudo wget --no-cache --no-cookies https://raw.githubusercontent.com/dlennox24/home-lab/main/home-assistant/restore.sh
    sudo chmod +x restore.sh
    sudo ./restore.sh
    ```

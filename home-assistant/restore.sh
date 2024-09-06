@@ -3,12 +3,6 @@
 
 cd /opt
 
-unzip main.zip
-sudo find home-lab-main -name ".gitkeep" -type f -delete
-mv home-lab-main/home-assistant/* .
-rm main.zip
-chmod +x backup.sh
-
 # Add Docker's official GPG key:
 sudo apt-get update
 sudo apt-get install ca-certificates curl
@@ -23,11 +17,23 @@ echo \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 sudo apt-get update
 
-sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+sudo apt-get install -y \
+  docker-ce \
+  docker-ce-cli \
+  containerd.io \
+  docker-buildx-plugin \
+  docker-compose-plugin \
+  net-tools \
+  unzip
 
 alias docker='/usr/bin/docker'
 
+unzip main.zip
+sudo find home-lab-main -name ".gitkeep" -type f -delete
+mv home-lab-main/home-assistant/* .
+rm main.zip
+chmod +x backup.sh
+
 docker compose up -d
 
-sudo apt-get install net-tools
 echo "Current IP: $(ifconfig eno1 | grep 'inet ' | awk '{print $2}')"
