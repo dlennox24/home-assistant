@@ -12,8 +12,9 @@
 1. Run the below block to begin the restore
 
    ```shell
-   wget https://github.com/dlennox24/home-lab/archive/refs/heads/main.zip
-   sudo mv home-lab-main/home-assistant/restore.sh
+   cd /opt
+   sudo wget https://github.com/dlennox24/home-lab/archive/refs/heads/main.zip
+   sudo wget https://raw.githubusercontent.com/dlennox24/home-lab/main/home-assistant/restore.sh
    sudo chmod +x restore.sh
    sudo ./restore.sh
    ```
