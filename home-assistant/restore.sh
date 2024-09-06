@@ -26,14 +26,14 @@ sudo apt-get install -y \
   net-tools \
   unzip
 
-alias docker='/usr/bin/docker'
+sudo  alias docker='/usr/bin/docker'
 
-unzip main.zip
-sudo find home-lab-main -name ".gitkeep" -type f -delete
-mv home-lab-main/home-assistant/* .
-rm main.zip
-chmod +x backup.sh
+sudo unzip main.zip
+sudo sudo find home-lab-main -name ".gitkeep" -type f -delete
+sudo mv home-lab-main/home-assistant/* .
+sudo rm main.zip
+sudo chmod +x backup.sh
 
-docker compose up -d
+sudo docker compose up -d
 
 echo "Current IP: $(ifconfig eno1 | grep 'inet ' | awk '{print $2}')"
