@@ -27,3 +27,6 @@ sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plug
 alias docker='/usr/bin/docker'
 
 docker compose up -d
+
+sudo apt-get install net-tools
+echo "Current IP: $(ifconfig eth0 | grep 'inet ' | awk '{print $2}')"
