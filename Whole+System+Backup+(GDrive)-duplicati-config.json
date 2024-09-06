@@ -1,0 +1,87 @@
+{
+  "CreatedByVersion": "2.0.8.1",
+  "Schedule": {
+    "ID": 3,
+    "Tags": [
+      "ID=3"
+    ],
+    "Time": "2024-09-07T06:30:00Z",
+    "Repeat": "1D",
+    "LastRun": "2024-09-06T06:30:47Z",
+    "Rule": "AllowedWeekDays=Thursday,Friday,Saturday,Sunday,Monday,Tuesday,Wednesday",
+    "AllowedDays": [
+      "thu",
+      "fri",
+      "sat",
+      "sun",
+      "mon",
+      "tue",
+      "wed"
+    ]
+  },
+  "Backup": {
+    "ID": "3",
+    "Name": "Whole System Backup (GDrive)",
+    "Description": "",
+    "Tags": [],
+    "TargetURL": "googledrive://backups/ha/duplicati/whole-system-gdrive",
+    "DBPath": "/data/Duplicati/XTCSRSSRHN.sqlite",
+    "Sources": [
+      "/source/esphome/",
+      "/source/home-assistant/",
+      "/source/portainer/"
+    ],
+    "Settings": [
+      {
+        "Filter": "",
+        "Name": "encryption-module",
+        "Value": "aes",
+        "Argument": null
+      },
+      {
+        "Filter": "",
+        "Name": "compression-module",
+        "Value": "zip",
+        "Argument": null
+      },
+      {
+        "Filter": "",
+        "Name": "dblock-size",
+        "Value": "500MB",
+        "Argument": null
+      },
+      {
+        "Filter": "",
+        "Name": "retention-policy",
+        "Value": "1W:1D,4W:1W,12M:1M",
+        "Argument": null
+      }
+    ],
+    "Filters": [],
+    "Metadata": {
+      "LastBackupDate": "20240906T152210Z",
+      "BackupListCount": "2",
+      "TotalQuotaSpace": "107374182400",
+      "FreeQuotaSpace": "57528508870",
+      "AssignedQuotaSpace": "-1",
+      "TargetFilesSize": "925637682",
+      "TargetFilesCount": "10",
+      "TargetSizeString": "882.76 MB",
+      "SourceFilesSize": "2153661832",
+      "SourceFilesCount": "19314",
+      "SourceSizeString": "2.01 GB",
+      "LastBackupStarted": "20240906T152210Z",
+      "LastBackupFinished": "20240906T152323Z",
+      "LastBackupDuration": "00:01:13.1655390",
+      "LastCompactDuration": "00:00:00.1041080",
+      "LastCompactStarted": "20240906T152313Z",
+      "LastCompactFinished": "20240906T152313Z"
+    },
+    "IsTemporary": false
+  },
+  "DisplayNames": {
+    "/source/esphome/": "esphome",
+    "/source/home-assistant/": "home-assistant",
+    "/source/portainer/": "portainer"
+  }
+}

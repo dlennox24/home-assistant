@@ -13,8 +13,14 @@
 
    ```shell
    cd /opt
-   sudo wget --no-cache --no-cookies https://github.com/dlennox24/home-lab/archive/refs/heads/main.zip
-   sudo wget --no-cache --no-cookies https://raw.githubusercontent.com/dlennox24/home-lab/main/home-assistant/restore.sh
+   sudo wget --no-cache --no-cookies https://github.com/dlennox24/home-lab/archive/refs/heads/main.zip -O main.zip
+   sudo wget --no-cache --no-cookies https://raw.githubusercontent.com/dlennox24/home-lab/main/home-assistant/restore.sh -O restore.sh
    sudo chmod +x restore.sh
    sudo ./restore.sh
    ```
+
+1. Visit the Duplicati interface (`http://<ip>:8200`) to restore the backup
+
+   1. Use the `Whole+System+Backup+(GDrive)-duplicati-config.json` file as an import
+   1. Add encryption (`AES-256 encryption, built in`) and password to the backup
+   1. Verify connection to GDrive folder `backups/ha/duplicati/whole-system-gdrive` via AuthID

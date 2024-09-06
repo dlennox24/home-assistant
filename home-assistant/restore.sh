@@ -32,6 +32,7 @@ sudo unzip main.zip
 sudo sudo find home-lab-main -name ".gitkeep" -type f -delete
 sudo mv home-lab-main/home-assistant/* .
 sudo rm main.zip
+sudo rm -rf home-lab-main
 sudo chmod +x backup.sh
 
 sudo docker compose up -d
