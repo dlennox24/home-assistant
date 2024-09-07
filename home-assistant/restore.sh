@@ -24,7 +24,8 @@ sudo apt-get install -y \
   docker-buildx-plugin \
   docker-compose-plugin \
   net-tools \
-  unzip
+  unzip \
+  nano
 
 sudo  alias docker='/usr/bin/docker'
 

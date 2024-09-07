@@ -24,3 +24,11 @@
    1. Use the `Whole+System+Backup+(GDrive)-duplicati-config.json` file as an import
    1. Add encryption (`AES-256 encryption, built in`) and password to the backup
    1. Verify connection to GDrive folder `backups/ha/duplicati/whole-system-gdrive` via AuthID
+   1. Save the backup
+   1. Select the dropdown next to the name
+   1. Select `Database` and then select `Repair`
+   1. Once complete select the dropdown again, then `Restore files`
+   1. Select all the sources and verify the `Restore from` is set to the latest backup, then select `Continue`
+   1. Ensure `Original location`, `Overwrite`, and `Restore read/write permissions` is selected and click `Restore`
+
+1. Run `sudo docker compose restart` so the containers can pick up the recovered files
